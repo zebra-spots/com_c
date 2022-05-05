@@ -1,0 +1,31 @@
+# Makefile
+
+supersecure:
+        gcc main.c -o supersecure
+
+all:
+        gcc main.c -o supersecure -save-temps
+
+nuke:
+        rm -f supersecure*
+
+clean:
+        rm supersecure
+
+clean.o:
+        rm supersecure.o
+
+clean.s:
+        rm supersecure.s
+
+clean.i:
+        rm supersecure.i
+
+gdb:
+        gcc -g -ggdb -o main.c supersecdebug
+
+valgrind:
+        valgrind main.c
+
+analyzer:
+        gcc main.c -fanalyzer
