@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     }
     else 
     {
-        fprintf(stderr, "Socket created!\n");
+	fprintf(stderr, "Socket created!\n");
     }
 
     /* retrieve the port number for connecting */
@@ -46,32 +46,32 @@ int main(int argc, char *argv[])
 
     if (returnStatus == 0) 
     {
-        fprintf(stderr, "Connect successful!\n");
+	fprintf(stderr, "Connect successful!\n");
+	
+	    while(1)
+	    {
 
-            while(1)
-            {
-
-            /* Define send */
-            //char client_request[] = "GET OFF MY BOX\n";
-            //int message_send = send(simpleSocket, client_request, sizeof(client_request), 0);
-            char message[256] = "";
-            scanf("%s\n", message);
-            int message_send_two = send(simpleSocket, message, sizeof(message), 0);
-            
-            /* Define read */
-            char buffer[256] = "";
-            int var = read(simpleSocket, buffer, sizeof(buffer));
-            puts(buffer);
-            
-            /* Define recv */ 
-            /*
-            char server_resp[256] = "";
-            int message_recv = recv(simpleSocket, server_resp, sizeof(server_resp), 0);
-            puts(server_resp);
-            //message_send = send(simpleSocket, client_request, sizeof(client_request), 0);
-            */
-            }
-
+	    /* Define send */
+	    //char client_request[] = "GET OFF MY BOX\n";
+	    //int message_send = send(simpleSocket, client_request, sizeof(client_request), 0);
+	    char message[256] = "";
+	    scanf("%s", message);
+	    int message_send_two = send(simpleSocket, message, sizeof(message), 0);
+	    
+	    /* Define read */
+	    char buffer[256] = "";
+	    int var = read(simpleSocket, buffer, sizeof(buffer));
+	    puts(buffer);
+	    
+	    /* Define recv */ 
+	    /*
+	    char server_resp[256] = "";
+	    int message_recv = recv(simpleSocket, server_resp, sizeof(server_resp), 0);
+	    puts(server_resp);
+	    //message_send = send(simpleSocket, client_request, sizeof(client_request), 0);
+	    */
+	    }
+	
     }
     else 
     {
