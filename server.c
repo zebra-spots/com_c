@@ -40,11 +40,11 @@ int main()
 	/* Bind error handling */
 	if (bnd == 0) 
 	{
-	printf("Bind successful");
+	printf("Bind successful\n");
 	}
 	else 
 	{
-	printf("Bind failed");
+	printf("Bind failed\n");
 	return 0;
 	}
 	
